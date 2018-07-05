@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <h1>galvanize</h1>
+  </header>
+  <main>
+    <section>
+      <h2>Pay Your Bill</h2>
+      <form action="http://localhost:5000/accept-payment" method="POST">
+        <script src="https://checkout.stripe.com/checkout.js" 
+          class="stripe-button" data-key="pk_test_elpOWvia2H76jHTpdf3Y2LXe" 
+          data-amount="38700"
+          data-name="Membership Fee" 
+          data-description="Galvanize Mebership Fee" 
+          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
+          data-locale="auto" 
+          data-zip-code="true">
+        </script>
+      </form>
+    </section>
+    <!-- Add payment form here -->
+  </main>
+  <!-- Add stripe client side library here -->
+</body>
+
+</html>
