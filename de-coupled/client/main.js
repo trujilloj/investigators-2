@@ -14,7 +14,7 @@ var handler = StripeCheckout.configure({
             stripeToken: token.id,
             amount: purchaseData.amount
         };
-        fetch('http://localhost:5000/accept-payment', {
+        fetch('https://sleepy-ocean-91982.herokuapp.com/accept-payment', {
                 method: 'post',
                 body: JSON.stringify(payload),
                 headers: {
