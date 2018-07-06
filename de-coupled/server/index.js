@@ -4,7 +4,7 @@ const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY)
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 const app = express();
 
@@ -37,8 +37,8 @@ app.post('/accept-payment', (req, res) => {
 
   charge.then(result => {
       throw new Error("this didn't work")
-    res.json(result)})
-    
+      res.json(result)
+    })
     .catch(err => {
       console.error(err);
       const error = {
@@ -46,7 +46,7 @@ app.post('/accept-payment', (req, res) => {
         failure_code: err.code || 500
       }
       res.json(error);
-    })
+    });
 });
 
 app.use((req, res, next) => {

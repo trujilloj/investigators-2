@@ -13,7 +13,7 @@ var handler = StripeCheckout.configure({
         const payload = {
             stripeToken: token.id,
             amount: purchaseData.amount
-        }
+        };
         fetch('http://localhost:5000/accept-payment', {
                 method: 'post',
                 body: JSON.stringify(payload),
@@ -24,16 +24,15 @@ var handler = StripeCheckout.configure({
             .then(res => res.json())
             .then(res => {
                 const paidStatus = document.querySelector('#paidStatus');
-                console.log(res)
                 if (res.failure_code) {
                     displayError(new Error('There was an error processing your card', paidStatus))
                 } else {
-                    const message = `Your card was charged $${res.amount / 100}`
+                    const message = `Your card was charged $${res.amount / 100}`;
                     paidStatus.innerHTML = message;
-                }
+                };
             })
             .catch(displayError)
-    }
+    };
 });
 
 document.querySelector('#pay-bill').addEventListener('submit', function (e) {
