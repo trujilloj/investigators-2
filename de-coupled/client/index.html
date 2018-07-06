@@ -12,20 +12,26 @@
   <main>
     <section>
       <h2>Pay Your Bill</h2>
-      <form action="http://localhost:5000/accept-payment" method="POST">
-        <script src="https://checkout.stripe.com/checkout.js" 
-          class="stripe-button" data-key="pk_test_elpOWvia2H76jHTpdf3Y2LXe" 
-          data-amount="38700"
-          data-name="Membership Fee" 
-          data-description="Galvanize Mebership Fee" 
-          data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-          data-locale="auto" 
-          data-zip-code="true">
-        </script>
-      </form>
     </section>
+    <form id="pay-bill">
+      <div>
+        <label for="amount">Please Enter Payment Amount (You Owe $387.00)</label>
+      </div>
+      <div>
+        <input type="number" name="amount" id="amount-to-pay" min="0" max="387">
+      </div>
+      <div>
+        <button>Pay</button>
+      </div>
+
+    </form>
+    <div id="paidStatus">
+      
+    </div>
     <!-- Add payment form here -->
   </main>
+  <script src="https://checkout.stripe.com/checkout.js"></script>
+  <script src ="main.js"></script>
   <!-- Add stripe client side library here -->
 </body>
 
